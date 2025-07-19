@@ -8,7 +8,7 @@ def print_scroll(text):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(1.4)
+        time.sleep(.02)
 
 
 def load_story(section_title, file_path="D:\coding\DNDgame\choose_your_own_adventure_story.txt"):
@@ -43,7 +43,7 @@ def load_story(section_title, file_path="D:\coding\DNDgame\choose_your_own_adven
 #Create the Narative
 def introduction():
     intro_text = load_story("INTRODUCTION: ARRIVAL")
-    print(intro_text)
+    print_scroll(intro_text)
 
     #create the first choice you could choose that starts the game:
 def first_choice():
@@ -62,7 +62,7 @@ def first_choice():
             chapter_village()
             break
         if choice == "C":
-            print(load_story("INTRODUCTION: THE TRAP"))
+            print_scroll(load_story("INTRODUCTION: THE TRAP"))
             introduction()
             first_choice()
             break
@@ -72,7 +72,7 @@ def first_choice():
 
   #Create the choices for the chapter  
 def chapter_eldrin():
-    print(load_story("CHAPTER 1: INTO THE WOODS"))
+    print_scroll(load_story("CHAPTER 1: INTO THE WOODS"))
     print("\nDo you:")
     print("A: Enter the Circle alone?")
     print("B: Perform the ritual with Eldrin?")
@@ -82,20 +82,20 @@ def chapter_eldrin():
     while True:
         choice = input("Enter your choice(A,B,C,D): ").upper()
         if choice == "A":
-            print(load_story("ENDING A: THE FORGOTTEN ONE"))
+            print_scroll(load_story("ENDING A: THE FORGOTTEN ONE"))
             break
         elif choice == "B":
-            print(load_story("ENDING B: THE WARDEN"))
+            print_scroll(load_story("ENDING B: THE WARDEN"))
             break
         elif choice == "C":
-            print(load_story("ENDING C: ABBANDON THE RITE"))
+            print_scroll(load_story("ENDING C: ABBANDON THE RITE"))
             chapter_village()
             break
         else:
             print("That is not an option, please try again: (A,B,C)")
 #create the other set of choices
 def chapter_village():
-     print(load_story("CHAPTER 2: INTO THE VILLAGE"))
+     print_scroll(load_story("CHAPTER 2: INTO THE VILLAGE"))
      print("\nDo you:")
      print("A) Visit the baker.")
      print("B) Go to the tavern.")
@@ -105,13 +105,13 @@ def chapter_village():
      while True:
          choice = input("Enter your choice(A,B,C): ").upper()
          if choice == "A":
-             print(load_story("ENDING VA: THE SEER"))
+             print_scroll(load_story("ENDING VA: THE SEER"))
              break
          elif choice == "B":
-             print(load_story("ENDING VB: THE DRUNKARD"))
+             print_scroll(load_story("ENDING VB: THE DRUNKARD"))
              break
          elif choice == "C":
-             print(load_story("ENDING VC: THE DEFFENDERS"))
+             print_scroll(load_story("ENDING VC: THE DEFFENDERS"))
              break
          else:
             print("That is not an option, please try again: (A,B,C)")
